@@ -19,27 +19,41 @@ import java.lang.System.getenv
 
 plugins {
     kotlin("jvm") version "1.5.30"
+    kotlin("kapt") version "1.5.30"
     `maven-publish`
     signing
     id("org.jetbrains.dokka") version "1.5.0"
-    id("io.gitlab.arturbosch.detekt").version("1.15.0-RC1")
+    id("io.gitlab.arturbosch.detekt").version("1.18.0")
 }
 
-// FIXME Replace with group
-group = "br.com.colman."
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("io.objectbox:objectbox-gradle-plugin:2.9.1")
+    }
+}
+
+apply(plugin = "io.objectbox")
+
+group = "br.com.colman"
 version = getenv("RELEASE_VERSION") ?: "local"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 dependencies {
     // Kotest
+    implementation("io.kotest:kotest-framework-api:4.6.2")
+
     testImplementation("io.kotest:kotest-runner-junit5:4.6.2")
-    
-    // Mockk
-    testImplementation("io.mockk:mockk:1.12.0")
+}
+
+kotlin {
+    explicitApi()
 }
 
 tasks.withType<KotlinCompile> {
@@ -85,15 +99,15 @@ publishing {
             artifact(javadocJar.get())
 
             pom {
-                name.set("NAME")    // FIXME change name
-                description.set("DESCRIPTION") //FIXME change description
-                url.set("https://www.github.com/LeoColman/repo") // FIXME change URL
+                name.set("objectbox-kotest-listener")
+                description.set("ObjectBox Kotest Listener")
+                url.set("https://www.github.com/LeoColman/objectbox-kotest-listener")
 
 
                 scm {
-                    connection.set("scm:git:http://www.github.com/LeoColman/repo") // FIXME change URL
-                    developerConnection.set("scm:git:http://github.com/LeoColman/repo") // FIXME change URL
-                    url.set("https://www.github.com/LeoColman/repo") // FIXME change URL
+                    connection.set("scm:git:http://www.github.com/LeoColman/objectbox-kotest-listener")
+                    developerConnection.set("scm:git:http://github.com/LeoColman/objectbox-kotest-listener")
+                    url.set("https://www.github.com/LeoColman/objectbox-kotest-listener")
                 }
 
                 licenses {
