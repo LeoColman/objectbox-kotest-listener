@@ -49,7 +49,7 @@ dependencies {
     // Kotest
     implementation("io.kotest:kotest-framework-api:4.6.2")
 
-    testImplementation("io.kotest:kotest-runner-junit5:4.6.2")
+    testImplementation("io.kotest:kotest-runner-junit5:4.6.3")
 }
 
 kotlin {
