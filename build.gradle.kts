@@ -47,7 +47,7 @@ repositories {
 
 dependencies {
     // Kotest
-    implementation("io.kotest:kotest-framework-api:4.6.2")
+    implementation("io.kotest:kotest-framework-api:4.6.3")
 
     testImplementation("io.kotest:kotest-runner-junit5:4.6.2")
 }
