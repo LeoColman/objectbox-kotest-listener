@@ -19,7 +19,7 @@ import java.lang.System.getenv
 
 plugins {
     kotlin("jvm") version "1.5.30"
-    kotlin("kapt") version "1.5.30"
+    kotlin("kapt") version "1.5.31"
     `maven-publish`
     signing
     id("org.jetbrains.dokka") version "1.5.0"
