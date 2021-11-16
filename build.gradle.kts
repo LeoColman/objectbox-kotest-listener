@@ -19,7 +19,7 @@ import java.lang.System.getenv
 
 plugins {
     kotlin("jvm") version "1.5.30"
-    kotlin("kapt") version "1.5.30"
+    kotlin("kapt") version "1.6.0"
     `maven-publish`
     signing
     id("org.jetbrains.dokka") version "1.5.0"
@@ -32,7 +32,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("io.objectbox:objectbox-gradle-plugin:2.9.1")
+        classpath("io.objectbox:objectbox-gradle-plugin:3.0.1")
     }
 }
 
