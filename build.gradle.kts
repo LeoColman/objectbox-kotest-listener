@@ -32,7 +32,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("io.objectbox:objectbox-gradle-plugin:2.9.1")
+        classpath("io.objectbox:objectbox-gradle-plugin:3.1.2")
     }
 }
 
