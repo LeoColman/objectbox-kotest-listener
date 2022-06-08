@@ -18,7 +18,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.lang.System.getenv
 
 plugins {
-    kotlin("jvm") version "1.5.30"
+    kotlin("jvm") version "1.7.0"
     kotlin("kapt") version "1.6.0"
     `maven-publish`
     signing
